@@ -43,11 +43,11 @@ for p in ${plots_dir//:/ }; do
 done
 
 if [[ -n "${peer_count}" ]]; then
-  aedge configure --set-peer-count "${peer_count}"
+  btcgreen configure --set-peer-count "${peer_count}"
 fi
 
 if [[ -n "${outbound_peer_count}" ]]; then
-  aedge configure --set_outbound-peer-count "${outbound_peer_count}"
+  btcgreen configure --set_outbound-peer-count "${outbound_peer_count}"
 fi
 
 if [[ -n "${log_level}" ]]; then
