@@ -44,9 +44,9 @@ done
 
 btcgreen configure --upnp "${upnp}"
 
-# if [[ -n "${log_level}" ]]; then
-#  btcgreen configure --log-level "${log_level}"
-# fi
+if [[ -n "${log_level}" ]]; then
+  btcgreen configure --log-level "${log_level}"
+fi
 
 if [[ -n "${peer_count}" ]]; then
   btcgreen configure --set-peer-count "${peer_count}"
