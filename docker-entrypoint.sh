@@ -44,9 +44,9 @@ done
 
 btcgreen configure --upnp "${upnp}"
 
-# if [[ -n "${log_level}" ]]; then
-#  btcgreen configure --log-level "${log_level}"
-# fi
+if [[ -n "${log_level}" ]]; then
+  btcgreen configure --log-level "${log_level}"
+ fi
 
 if [[ -n "${peer_count}" ]]; then
   btcgreen configure --set-peer-count "${peer_count}"
@@ -62,11 +62,11 @@ fi
 
 sed -i 's/localhost/127.0.0.1/g' "$BTCGREEN_ROOT/config/config.yaml"
 
-# if [[ ${log_to_file} != 'true' ]]; then
-#  sed -i 's/log_stdout: false/log_stdout: true/g' "$BTCGREEN_ROOT/config/config.yaml"
-# else
-#  sed -i 's/log_stdout: true/log_stdout: false/g' "$BTCGREEN_ROOT/config/config.yaml"
-# fi
+if [[ ${log_to_file} != 'true' ]]; then
+  sed -i 's/log_stdout: false/log_stdout: true/g' "$BTCGREEN_ROOT/config/config.yaml"
+ else
+  sed -i 's/log_stdout: true/log_stdout: false/g' "$BTCGREEN_ROOT/config/config.yaml"
+ fi
 
 # Map deprecated legacy startup options.
 if [[ ${farmer} == "true" ]]; then
